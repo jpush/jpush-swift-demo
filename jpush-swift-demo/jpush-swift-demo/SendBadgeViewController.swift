@@ -8,15 +8,31 @@
 
 import UIKit
 
-class SendBadgeViewController: UIViewController {
+class SendBadgeViewController: UIViewController,UIGestureRecognizerDelegate {
+  @IBOutlet weak var sendBadgeText: UITextField!
+  @IBOutlet weak var sendBadgeButton: UIButton!
 
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
+    let gesture = UITapGestureRecognizer(target: self, action:Selector("handleTap:"))
+    gesture.delegate = self
+    self.view.addGestureRecognizer(gesture)
+  }
+  
+  func handleTap(recognizer: UITapGestureRecognizer) {
+    UIApplication.sharedApplication().sendAction(Selector("resignFirstResponder"), to: nil, from: nil, forEvent: nil)
   }
   
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
+  }
+  @IBAction func onClickToSend(sender: AnyObject) {
+
+    let badgeText:NSString? = sendBadgeText.text
+    let value:Int = Int(badgeText!.intValue)
+    JPUSHService.setBadge(value)
+    print("send badge:%d to jpush server",value)
   }
 }
+

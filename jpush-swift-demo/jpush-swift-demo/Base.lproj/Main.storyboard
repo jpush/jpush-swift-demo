@@ -19,12 +19,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="连接状态:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H5w-kO-6ie">
-                                <rect key="frame" x="66" y="57" width="56" height="16"/>
+                                <rect key="frame" x="39" y="57" width="56" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="DeviceToken:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2s9-n4-Jm0">
-                                <rect key="frame" x="41" y="86" width="81" height="16"/>
+                                <rect key="frame" x="14" y="86" width="81" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -51,36 +51,36 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="RegistrationID:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pTL-9a-qjm">
-                                <rect key="frame" x="32" y="161" width="90" height="16"/>
+                                <rect key="frame" x="5" y="161" width="90" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="appkey:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vnl-1v-E2d">
-                                <rect key="frame" x="74" y="188" width="48" height="16"/>
+                                <rect key="frame" x="47" y="188" width="48" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="未连接" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9NU-5o-9Pt">
-                                <rect key="frame" x="156" y="57" width="105" height="21"/>
+                                <rect key="frame" x="106" y="57" width="105" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="未获得" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="StQ-oG-unR">
-                                <rect key="frame" x="156" y="161" width="105" height="21"/>
+                                <rect key="frame" x="106" y="161" width="289" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="未获得" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qC6-3t-zfA">
-                                <rect key="frame" x="156" y="86" width="280" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="未获得" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qC6-3t-zfA">
+                                <rect key="frame" x="106" y="86" width="208" height="52"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="未获得" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CdE-Se-x1A">
-                                <rect key="frame" x="156" y="188" width="232" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="未获得" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CdE-Se-x1A">
+                                <rect key="frame" x="106" y="188" width="193" height="51"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -98,15 +98,33 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c6e-0F-Rtl">
-                                <rect key="frame" x="156" y="344" width="158" height="21"/>
+                                <rect key="frame" x="156" y="344" width="158" height="152"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="0.0" blue="0.96116357109999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I11-wC-Pih">
+                                <rect key="frame" x="271" y="247" width="59" height="32"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title="clear"/>
+                                <connections>
+                                    <action selector="cleanMessage:" destination="9pv-A4-QxB" eventType="touchUpInside" id="8yY-qE-urv"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="首页" image="index.png" id="acW-dT-cKf"/>
+                    <connections>
+                        <outlet property="appKeyLabel" destination="CdE-Se-x1A" id="5Pl-u8-neJ"/>
+                        <outlet property="cleanMessageButton" destination="I11-wC-Pih" id="LXG-ae-flc"/>
+                        <outlet property="deviceTokenValue" destination="qC6-3t-zfA" id="LGB-Sz-8vZ"/>
+                        <outlet property="messageContentView" destination="c6e-0F-Rtl" id="BsE-Eo-MjC"/>
+                        <outlet property="messageCountLabel" destination="5nJ-3T-fkG" id="txT-Jm-WCj"/>
+                        <outlet property="netWorkStateLabel" destination="9NU-5o-9Pt" id="Lwj-o1-IBQ"/>
+                        <outlet property="notificationCountLabel" destination="Or2-Jn-Nfu" id="vlR-Ic-d2w"/>
+                        <outlet property="registrationValueLabel" destination="StQ-oG-unR" id="Ec8-8U-ETT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
@@ -124,8 +142,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iJ3-p5-qP2">
-                                <rect key="frame" x="53" y="207" width="30" height="28"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iJ3-p5-qP2">
+                                <rect key="frame" x="53" y="206" width="30" height="28"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="30" id="19S-Cb-aUT"/>
                                     <constraint firstAttribute="height" constant="28" id="Ud2-5e-02w"/>
@@ -134,6 +152,9 @@
                                 <state key="normal" title="设置">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="setTagsAlias:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="pts-ev-7JM"/>
+                                </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alias:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BCA-0o-Xvl">
                                 <rect key="frame" x="33" y="126" width="33" height="16"/>
@@ -173,6 +194,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                <connections>
+                                    <action selector="textFieldDidEndOnExit:" destination="8rJ-Kc-sve" eventType="editingDidEnd" id="2xc-vp-Rec"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="输入alias值" minimumFontSize="14" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="CGV-Vt-6iS">
                                 <rect key="frame" x="94" y="122" width="205" height="30"/>
@@ -182,6 +206,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                <connections>
+                                    <action selector="textFieldDidEndOnExit:" destination="8rJ-Kc-sve" eventType="editingDidEnd" id="dSs-PI-R6G"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dwe-DA-Slv">
                                 <rect key="frame" x="205" y="207" width="30" height="28"/>
@@ -193,6 +220,9 @@
                                 <state key="normal" title="重置">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="clear:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="Aus-wm-hj9"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="STh-Tb-LTl">
                                 <rect key="frame" x="48" y="171" width="53" height="28"/>
@@ -204,6 +234,9 @@
                                 <state key="normal" title="清空tags">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="resetTags:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="wDx-TN-Zz8"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SMg-GP-9y6">
                                 <rect key="frame" x="205" y="169" width="54" height="28"/>
@@ -215,6 +248,9 @@
                                 <state key="normal" title="清空alias">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="resetAlias:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="nFW-58-B4E"/>
+                                </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="服务器返回结果" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="sWE-e1-g91">
                                 <rect key="frame" x="0.0" y="306" width="600" height="143"/>
@@ -242,6 +278,9 @@
                                     <constraint firstAttribute="width" constant="34" id="yBp-ug-9Ih"/>
                                 </constraints>
                                 <state key="normal" title="clear"/>
+                                <connections>
+                                    <action selector="clearResult:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="x8l-d6-744"/>
+                                </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-------------------------------------------------------------------------------------" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HWa-zG-FBg">
                                 <rect key="frame" x="0.0" y="249" width="646" height="21"/>
@@ -261,6 +300,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                <connections>
+                                    <action selector="textFieldDidEndOnExit:" destination="8rJ-Kc-sve" eventType="editingDidEnd" id="Klr-S2-lIy"/>
+                                </connections>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -297,6 +339,12 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="TagAlias" image="setTags.png" id="cPa-gy-q4n"/>
+                    <connections>
+                        <outlet property="aliasTextField" destination="CGV-Vt-6iS" id="hS2-jE-cwG"/>
+                        <outlet property="callBackTextView" destination="sWE-e1-g91" id="TRE-ul-Pz1"/>
+                        <outlet property="tags1TextField" destination="X5i-4Z-uMD" id="4gQ-Mx-YSL"/>
+                        <outlet property="tags2TextField" destination="TXn-j9-SGh" id="Hmh-Fl-Rl8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
@@ -332,6 +380,9 @@
                                 <state key="normal" title="Send Badge">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="onClickToSend:" destination="Szv-Si-Nkt" eventType="touchUpInside" id="XEJ-Fc-UoY"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -343,6 +394,10 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Badge" image="report.png" id="4dc-Ti-XDd"/>
+                    <connections>
+                        <outlet property="sendBadgeButton" destination="MmY-jG-fnO" id="NUC-dd-IND"/>
+                        <outlet property="sendBadgeText" destination="wGV-qj-Sng" id="2dK-th-aqE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RNt-9d-qCv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -420,6 +475,9 @@
                                 <state key="normal" title="添加">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="setNotification:" destination="BpL-Ua-rRL" eventType="touchUpInside" id="dld-2l-X4E"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sxm-Pq-pfh">
                                 <rect key="frame" x="120" y="378" width="52" height="28"/>
@@ -427,6 +485,9 @@
                                 <state key="normal" title="清空通知">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="clearAllNotification:" destination="BpL-Ua-rRL" eventType="touchUpInside" id="gbQ-Gn-pwm"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zmq-rE-FoU">
                                 <rect key="frame" x="212" y="378" width="91" height="28"/>
@@ -434,6 +495,9 @@
                                 <state key="normal" title="删除上一个通知">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="clearLastNotification:" destination="BpL-Ua-rRL" eventType="touchUpInside" id="Iw7-F0-biR"/>
+                                </connections>
                             </button>
                             <label autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="通知时间:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qcc-p2-Axi">
                                 <rect key="frame" x="5" y="20" width="61" height="17"/>
@@ -451,6 +515,13 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="本地通知" image="localNotification.png" id="u1C-xD-yeV"/>
+                    <connections>
+                        <outlet property="notificationBadgeTextField" destination="Ipb-hY-NR1" id="PF4-Ba-jwl"/>
+                        <outlet property="notificationBodyTextField" destination="Zea-B1-cnV" id="CnY-20-wd5"/>
+                        <outlet property="notificationButtonTextField" destination="7ww-0b-hbe" id="MHN-bg-poQ"/>
+                        <outlet property="notificationDatePicker" destination="R3D-ub-d9p" id="gQS-Mg-bEV"/>
+                        <outlet property="notificationIdentifierTextField" destination="z2q-8x-rc4" id="rLf-1G-LhB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bTH-u0-4Ej" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
