@@ -14,19 +14,20 @@ class SetTagsViewController: UIViewController,UIGestureRecognizerDelegate {
   @IBOutlet weak var aliasTextField: UITextField!
 
   @IBOutlet weak var callBackTextView: UITextView!
-
+  let callBackSEL = Selector("tagsAliasCallBack:tags:alias:") //
+  
   @IBAction func textFieldDidEndOnExit(sender: AnyObject) {
     sender.resignFirstResponder()
   }
   
   @IBAction func resetTags(sender: AnyObject) {
-    JPUSHService.setTags(NSSet() as Set<NSObject>, callbackSelector: Selector("tagsAliasCallback:tags:alias:"), object: self)
+    JPUSHService.setTags(NSSet() as Set<NSObject>, callbackSelector: callBackSEL, object: self)
     let alert = UIAlertView(title: "设置", message: "已发送重置tags请求", delegate: self, cancelButtonTitle: "确定")
     alert.show()
   }
 
   @IBAction func resetAlias(sender: AnyObject) {
-    JPUSHService.setAlias("", callbackSelector: Selector("tagsAliasCallback:tags:alias:"), object: self)
+    JPUSHService.setAlias("", callbackSelector: callBackSEL, object: self)
     let alert = UIAlertView(title: "设置", message: "已发送重置 Alias 请求", delegate: self, cancelButtonTitle: "确定")
     alert.show()
   }
@@ -48,7 +49,7 @@ class SetTagsViewController: UIViewController,UIGestureRecognizerDelegate {
     var outTags:NSSet!
     (outAlias, outTags) = self.analyseInput(alias, tags: tags)
     
-    JPUSHService.setTags(outTags as Set<NSObject>, alias: outAlias as String, callbackSelector: Selector("tagsAliasCallback:tags:alias:"), target: self)
+    JPUSHService.setTags(outTags as Set<NSObject>, alias: outAlias as String, callbackSelector: callBackSEL, target: self)
     
     let alert = UIAlertView(title: "设置", message: "已发送设置", delegate: self, cancelButtonTitle: "确定")
     alert.show()
@@ -84,7 +85,11 @@ class SetTagsViewController: UIViewController,UIGestureRecognizerDelegate {
     return (outAlias,outTags)
   }
   
-  func tagsAliasCallBack(resCode:Int, tags:NSSet, alias:NSString) {
+//  - (void)standardCallback:(int)resCode
+//  originalTags:(NSSet *)tags
+//  alias:(NSString *)alias {
+//  }
+  @objc func tagsAliasCallBack(resCode:CInt, tags:NSSet, alias:NSString) {
     var callbackString = "\(resCode),  tags: \(self.loadView())"
     if callBackTextView.text == "服务器返回结果" {
       callBackTextView.text = callbackString
