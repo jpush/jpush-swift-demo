@@ -142,8 +142,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iJ3-p5-qP2">
-                                <rect key="frame" x="53" y="206" width="30" height="28"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iJ3-p5-qP2">
+                                <rect key="frame" x="53" y="207" width="30" height="28"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="30" id="19S-Cb-aUT"/>
                                     <constraint firstAttribute="height" constant="28" id="Ud2-5e-02w"/>
@@ -252,16 +252,6 @@
                                     <action selector="resetAlias:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="nFW-58-B4E"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="服务器返回结果" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="sWE-e1-g91">
-                                <rect key="frame" x="0.0" y="306" width="600" height="143"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="143" id="h7M-dp-1hd"/>
-                                </constraints>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="返回结果:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aS0-Gd-G2H">
                                 <rect key="frame" x="135" y="278" width="56" height="16"/>
                                 <constraints>
@@ -292,8 +282,8 @@
                                 <color key="textColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="输入第一个tag" minimumFontSize="14" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="X5i-4Z-uMD">
-                                <rect key="frame" x="22" y="84" width="110" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="输入第一个tag" minimumFontSize="14" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="X5i-4Z-uMD">
+                                <rect key="frame" x="27" y="84" width="110" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="BcO-X9-NPT"/>
                                     <constraint firstAttribute="width" constant="110" id="c8o-MP-Ffs"/>
@@ -304,6 +294,16 @@
                                     <action selector="textFieldDidEndOnExit:" destination="8rJ-Kc-sve" eventType="editingDidEnd" id="Klr-S2-lIy"/>
                                 </connections>
                             </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="服务器返回结果" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="sWE-e1-g91">
+                                <rect key="frame" x="0.0" y="306" width="600" height="143"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="143" id="h7M-dp-1hd"/>
+                                </constraints>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>

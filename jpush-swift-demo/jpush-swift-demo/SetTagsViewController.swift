@@ -43,21 +43,26 @@ class SetTagsViewController: UIViewController,UIGestureRecognizerDelegate {
     if tags2TextField.text != "" {
       tags.addObject(tags2TextField.text!)
     }
+
+//    var alias:String?
+//    if aliasTextField.text == "" {
+//      alias = nil
+//    }
+    var alias = aliasTextField.text
     
-    var alias:String = aliasTextField.text!
-    var outAlias:NSString!
-    var outTags:NSSet!
+    var outAlias:NSString?
+    var outTags:NSSet?
     (outAlias, outTags) = self.analyseInput(alias, tags: tags)
     
-    JPUSHService.setTags(outTags as Set<NSObject>, alias: outAlias as String, callbackSelector: callBackSEL, target: self)
+    JPUSHService.setTags(outTags as? Set<NSObject>, alias: outAlias as? String, callbackSelector: callBackSEL, target: self)
     
     let alert = UIAlertView(title: "设置", message: "已发送设置", delegate: self, cancelButtonTitle: "确定")
     alert.show()
   }
   
-  func analyseInput(alias:NSString!, tags:NSSet!)->(NSString!,NSSet!) {
-    var outAlias:NSString!
-    var outTags:NSSet!
+  func analyseInput(alias:NSString!, tags:NSSet!)->(NSString?,NSSet?) {
+    var outAlias:NSString?
+    var outTags:NSSet?
 
         if alias.length == 0 {
           outAlias = nil
@@ -85,10 +90,6 @@ class SetTagsViewController: UIViewController,UIGestureRecognizerDelegate {
     return (outAlias,outTags)
   }
   
-//  - (void)standardCallback:(int)resCode
-//  originalTags:(NSSet *)tags
-//  alias:(NSString *)alias {
-//  }
   @objc func tagsAliasCallBack(resCode:CInt, tags:NSSet, alias:NSString) {
     var callbackString = "\(resCode),  tags: \(self.loadView())"
     if callBackTextView.text == "服务器返回结果" {
