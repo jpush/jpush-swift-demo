@@ -44,10 +44,6 @@ class SetTagsViewController: UIViewController,UIGestureRecognizerDelegate {
       tags.addObject(tags2TextField.text!)
     }
 
-//    var alias:String?
-//    if aliasTextField.text == "" {
-//      alias = nil
-//    }
     var alias = aliasTextField.text
     
     var outAlias:NSString?
@@ -91,11 +87,11 @@ class SetTagsViewController: UIViewController,UIGestureRecognizerDelegate {
   }
   
   @objc func tagsAliasCallBack(resCode:CInt, tags:NSSet, alias:NSString) {
-    var callbackString = "\(resCode),  tags: \(self.loadView())"
+    var callbackString = "\(resCode),  tags: \(self.logSet(tags))"
     if callBackTextView.text == "服务器返回结果" {
       callBackTextView.text = callbackString
     } else {
-      callBackTextView.text = "\(callbackString)\n\(callBackTextView.text)"
+      callBackTextView.text = "\(callbackString)    \(callBackTextView.text)"
     }
     print("TagsAlias回调: \(callbackString)")
   }
