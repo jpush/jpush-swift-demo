@@ -1,14 +1,14 @@
 //
-//  jpush_swift_demoUITests.swift
-//  jpush-swift-demoUITests
+//  JPushSwiftDemoUITests.swift
+//  JPushSwiftDemoUITests
 //
-//  Created by oshumini on 16/1/21.
-//  Copyright © 2016年 HuminiOS. All rights reserved.
+//  Created by oshumini on 16/3/11.
+//  Copyright © 2016年 HXHG. All rights reserved.
 //
 
 import XCTest
 
-class jpush_swift_demoUITests: XCTestCase {
+class JPushSwiftDemoUITests: XCTestCase {
         
     override func setUp() {
         super.setUp()
