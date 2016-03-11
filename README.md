@@ -41,4 +41,4 @@ Offically supported Swift Demo for JPush iOS SDK.
   }
 ```
 
-到此 已经完成集成 JPush sdk 的基本功能，如需要更多功能请打开Demo工程了解详情
+到此 已经完成集成 JPush sdk 的基本功能，若需要更多功能请参考Demo工程
