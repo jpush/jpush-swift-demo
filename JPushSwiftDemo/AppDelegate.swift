@@ -19,12 +19,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
     
-    if((UIDevice.currentDevice().systemVersion as NSString).floatValue >= 8.0) {
+    if #available(iOS 8, *) {
       // 可以自定义 categories
-      JPUSHService.registerForRemoteNotificationTypes(UIUserNotificationType.Badge.rawValue | UIUserNotificationType.Sound.rawValue | UIUserNotificationType.Alert.rawValue , categories: nil)
+      JPUSHService.registerForRemoteNotificationTypes(
+        UIUserNotificationType.Badge.rawValue |
+          UIUserNotificationType.Sound.rawValue |
+          UIUserNotificationType.Alert.rawValue,
+        categories: nil)
     } else {
-      JPUSHService.registerForRemoteNotificationTypes(UIUserNotificationType.Badge.rawValue | UIUserNotificationType.Sound.rawValue | UIUserNotificationType.Alert.rawValue , categories: nil)
+      // ios 8 以前 categories 必须为nil
+      JPUSHService.registerForRemoteNotificationTypes(
+        UIRemoteNotificationType.Badge.rawValue |
+          UIRemoteNotificationType.Sound.rawValue |
+          UIRemoteNotificationType.Alert.rawValue,
+        categories: nil)
     }
+    
     JPUSHService.setupWithOption(launchOptions, appKey: appKey, channel: channel, apsForProduction: isProduction)
     
     return true
