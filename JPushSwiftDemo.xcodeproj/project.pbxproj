@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		62869D141D9923DB00C1E953 /* jpush-ios-2.1.9.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 62869D131D9923DB00C1E953 /* jpush-ios-2.1.9.a */; };
 		6296C8AB1C92954500FA965C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6296C8AA1C92954500FA965C /* AppDelegate.swift */; };
 		6296C8B21C92954500FA965C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6296C8B11C92954500FA965C /* Assets.xcassets */; };
 		6296C8B51C92954500FA965C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6296C8B31C92954500FA965C /* LaunchScreen.storyboard */; };
 		6296C8C01C92954500FA965C /* JPushSwiftDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6296C8BF1C92954500FA965C /* JPushSwiftDemoTests.swift */; };
 		6296C8CB1C92954500FA965C /* JPushSwiftDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6296C8CA1C92954500FA965C /* JPushSwiftDemoUITests.swift */; };
-		6296C8E31C929A0300FA965C /* jpush-ios-2.1.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6296C8E11C929A0300FA965C /* jpush-ios-2.1.0.a */; };
 		6296C8EB1C929B6200FA965C /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6296C8EA1C929B6200FA965C /* Security.framework */; };
 		6296C8ED1C929B6800FA965C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6296C8EC1C929B6800FA965C /* Foundation.framework */; };
 		6296C8EF1C929B6D00FA965C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6296C8EE1C929B6D00FA965C /* CoreGraphics.framework */; };
@@ -58,6 +58,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		62869D131D9923DB00C1E953 /* jpush-ios-2.1.9.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "jpush-ios-2.1.9.a"; sourceTree = "<group>"; };
 		6296C8A71C92954500FA965C /* JPushSwiftDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JPushSwiftDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6296C8AA1C92954500FA965C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6296C8B11C92954500FA965C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -69,7 +70,6 @@
 		6296C8C61C92954500FA965C /* JPushSwiftDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JPushSwiftDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6296C8CA1C92954500FA965C /* JPushSwiftDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JPushSwiftDemoUITests.swift; sourceTree = "<group>"; };
 		6296C8CC1C92954500FA965C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6296C8E11C929A0300FA965C /* jpush-ios-2.1.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "jpush-ios-2.1.0.a"; sourceTree = "<group>"; };
 		6296C8E21C929A0300FA965C /* JPUSHService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPUSHService.h; sourceTree = "<group>"; };
 		6296C8E71C929AE200FA965C /* JPushSwiftDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "JPushSwiftDemo-Bridging-Header.h"; sourceTree = "<group>"; };
 		6296C8EA1C929B6200FA965C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -97,6 +97,7 @@
 		6296C9131C929EC600FA965C /* localNotification.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = localNotification.png; sourceTree = "<group>"; };
 		6296C9141C929EC600FA965C /* report.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = report.png; sourceTree = "<group>"; };
 		6296C9151C929EC600FA965C /* setTags.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = setTags.png; sourceTree = "<group>"; };
+		62A0AE5D1D9A11E4004B1B18 /* JPushSwiftDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = JPushSwiftDemo.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,7 +114,7 @@
 				6296C8EF1C929B6D00FA965C /* CoreGraphics.framework in Frameworks */,
 				6296C8ED1C929B6800FA965C /* Foundation.framework in Frameworks */,
 				6296C8EB1C929B6200FA965C /* Security.framework in Frameworks */,
-				6296C8E31C929A0300FA965C /* jpush-ios-2.1.0.a in Frameworks */,
+				62869D141D9923DB00C1E953 /* jpush-ios-2.1.9.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -159,6 +160,7 @@
 			children = (
 				6296C8D81C9296E800FA965C /* Framework */,
 				6296C8AA1C92954500FA965C /* AppDelegate.swift */,
+				62A0AE5D1D9A11E4004B1B18 /* JPushSwiftDemo.entitlements */,
 				6296C8FC1C929CD300FA965C /* RootViewController.swift */,
 				6296C8FD1C929CD300FA965C /* SendBadgeViewController.swift */,
 				6296C8FE1C929CD300FA965C /* setLocalNotificationViewController.swift */,
@@ -194,7 +196,7 @@
 		6296C8D81C9296E800FA965C /* Framework */ = {
 			isa = PBXGroup;
 			children = (
-				6296C8E11C929A0300FA965C /* jpush-ios-2.1.0.a */,
+				62869D131D9923DB00C1E953 /* jpush-ios-2.1.9.a */,
 				6296C8E21C929A0300FA965C /* JPUSHService.h */,
 				6296C8FA1C929BC300FA965C /* libz.tbd */,
 				6296C8F81C929BBA00FA965C /* UIKit.framework */,
@@ -311,13 +313,22 @@
 				TargetAttributes = {
 					6296C8A61C92954500FA965C = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = RL64Y54S9V;
+						LastSwiftMigration = 0800;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					6296C8BA1C92954500FA965C = {
 						CreatedOnToolsVersion = 7.2.1;
+						LastSwiftMigration = 0800;
 						TestTargetID = 6296C8A61C92954500FA965C;
 					};
 					6296C8C51C92954500FA965C = {
 						CreatedOnToolsVersion = 7.2.1;
+						LastSwiftMigration = 0800;
 						TestTargetID = 6296C8A61C92954500FA965C;
 					};
 				};
@@ -532,16 +543,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = JPushSwiftDemo/JPushSwiftDemo.entitlements;
+				DEVELOPMENT_TEAM = RL64Y54S9V;
 				INFOPLIST_FILE = JPushSwiftDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/JPushSwiftDemo",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "HuminiOS.jpush-swift-demo";
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.huminios.jpushTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "JPushSwiftDemo/JPushSwiftDemo-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -550,15 +564,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = JPushSwiftDemo/JPushSwiftDemo.entitlements;
+				DEVELOPMENT_TEAM = RL64Y54S9V;
 				INFOPLIST_FILE = JPushSwiftDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/JPushSwiftDemo",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "HuminiOS.jpush-swift-demo";
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.huminios.jpushTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "JPushSwiftDemo/JPushSwiftDemo-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -570,6 +587,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = HXHG.JPushSwiftDemoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JPushSwiftDemo.app/JPushSwiftDemo";
 			};
 			name = Debug;
@@ -582,6 +600,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = HXHG.JPushSwiftDemoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JPushSwiftDemo.app/JPushSwiftDemo";
 			};
 			name = Release;
@@ -593,6 +612,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = HXHG.JPushSwiftDemoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = JPushSwiftDemo;
 				USES_XCTRUNNER = YES;
 			};
@@ -605,6 +625,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = HXHG.JPushSwiftDemoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = JPushSwiftDemo;
 				USES_XCTRUNNER = YES;
 			};

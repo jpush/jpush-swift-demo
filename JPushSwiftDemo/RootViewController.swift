@@ -27,17 +27,17 @@ class RootViewController: UIViewController {
     super.viewDidLoad()
 
     messageContents = NSMutableArray()
-    let defaultCenter:NSNotificationCenter = NSNotificationCenter.defaultCenter()
-    defaultCenter.addObserver(self, selector: "networkDidSetup:", name:kJPFNetworkDidSetupNotification, object: nil)
-    defaultCenter.addObserver(self, selector: "networkDidClose:", name:kJPFNetworkDidCloseNotification, object: nil)
-    defaultCenter.addObserver(self, selector: "networkDidRegister:", name:kJPFNetworkDidRegisterNotification, object: nil)
-    defaultCenter.addObserver(self, selector: "networkDidLogin:", name:kJPFNetworkDidLoginNotification, object: nil)
-    defaultCenter.addObserver(self, selector: "networkDidReceiveMessage:", name:kJPFNetworkDidReceiveMessageNotification, object: nil)
-    defaultCenter.addObserver(self, selector: "serviceError:", name:kJPFServiceErrorNotification, object: nil)
+    let defaultCenter:NotificationCenter = NotificationCenter.default
+    defaultCenter.addObserver(self, selector: #selector(RootViewController.networkDidSetup(_:)), name:NSNotification.Name.jpfNetworkDidSetup, object: nil)
+    defaultCenter.addObserver(self, selector: #selector(RootViewController.networkDidClose(_:)), name:NSNotification.Name.jpfNetworkDidClose, object: nil)
+    defaultCenter.addObserver(self, selector: #selector(RootViewController.networkDidRegister(_:)), name:NSNotification.Name.jpfNetworkDidRegister, object: nil)
+    defaultCenter.addObserver(self, selector: #selector(RootViewController.networkDidLogin(_:)), name:NSNotification.Name.jpfNetworkDidLogin, object: nil)
+    defaultCenter.addObserver(self, selector: #selector(RootViewController.networkDidReceiveMessage(_:)), name:NSNotification.Name.jpfNetworkDidReceiveMessage, object: nil)
+    defaultCenter.addObserver(self, selector: #selector(RootViewController.serviceError(_:)), name:NSNotification.Name.jpfServiceError, object: nil)
     registrationValueLabel.text = JPUSHService.registrationID()
     appKeyLabel.text = appKey
     
-    defaultCenter.addObserver(self, selector: "didRegisterRemoteNotification:", name:"DidRegisterRemoteNotification", object: nil)
+    defaultCenter.addObserver(self, selector: #selector(RootViewController.didRegisterRemoteNotification(_:)), name:NSNotification.Name(rawValue: "DidRegisterRemoteNotification"), object: nil)
   }
 
   override func didReceiveMemoryWarning() {
@@ -45,7 +45,7 @@ class RootViewController: UIViewController {
     // Dispose of any resources that can be recreated.
   }
 
-  @IBAction func cleanMessage(sender: AnyObject) {
+  @IBAction func cleanMessage(_ sender: AnyObject) {
     messageCount = 0
     notificationCount = 0
     self.reloadMessageCountLabel()
@@ -54,22 +54,22 @@ class RootViewController: UIViewController {
   }
   
   func unObserveAllNotifications() {
-    let defaultCenter = NSNotificationCenter.defaultCenter()
+    let defaultCenter = NotificationCenter.default
     defaultCenter.removeObserver(self)
   }
 
-  func networkDidSetup(notification:NSNotification) {
+  func networkDidSetup(_ notification:Notification) {
     netWorkStateLabel.text = "已连接"
     print("已连接")
   }
   
-  func networkDidClose(notification:NSNotification) {
+  func networkDidClose(_ notification:Notification) {
     netWorkStateLabel.text = "未连接"
     print("连接已断开")
   }
-  func networkDidRegister(notification:NSNotification) {
+  func networkDidRegister(_ notification:Notification) {
     netWorkStateLabel.text = "已注册"
-    if let info = notification.userInfo as? Dictionary<String,String> {
+    if let info = (notification as NSNotification).userInfo as? Dictionary<String,String> {
       // Check if value present before using it
       if let s = info["RegistrationID"] {
         registrationValueLabel.text = s
@@ -82,7 +82,7 @@ class RootViewController: UIViewController {
     print("已注册")
   }
   
-  func networkDidLogin(notification:NSNotification) {
+  func networkDidLogin(_ notification:Notification) {
     netWorkStateLabel.text = "已登录"
     print("已登录")
     if JPUSHService.registrationID() != nil {
@@ -91,45 +91,45 @@ class RootViewController: UIViewController {
     }
   }
   
-  func logDic(dic:NSDictionary)->String? {
+  func logDic(_ dic:NSDictionary)->String? {
     if dic.count == 0 {
       return nil
     }
     
-    let tempStr1 = dic.description.stringByReplacingOccurrencesOfString("\\u", withString: "\\U")
-    let tempStr2 = dic.description.stringByReplacingOccurrencesOfString("\"", withString: "\\\"")
+    let tempStr1 = dic.description.replacingOccurrences(of: "\\u", with: "\\U")
+    let tempStr2 = dic.description.replacingOccurrences(of: "\"", with: "\\\"")
     let tempStr3 = "\"" + tempStr2 + "\""
-    var tempData:NSData = (tempStr3 as NSString).dataUsingEncoding(NSUTF8StringEncoding)!
-    let str = (String)(NSPropertyListSerialization.propertyListFromData(tempData, mutabilityOption:NSPropertyListMutabilityOptions.Immutable, format:nil, errorDescription: nil))
+    let tempData:Data = (tempStr3 as NSString).data(using: String.Encoding.utf8.rawValue)!
+    let str = (String)(describing: PropertyListSerialization.propertyListFromData(tempData, mutabilityOption:PropertyListSerialization.MutabilityOptions(), format:nil, errorDescription: nil))
     return str
     
   }
   
-  func networkDidReceiveMessage(notification:NSNotification) {
-    var userInfo = notification.userInfo as? Dictionary<String,String>
+  func networkDidReceiveMessage(_ notification:Notification) {
+    var userInfo = (notification as NSNotification).userInfo as? Dictionary<String,String>
     let title = userInfo!["title"]
     let content = userInfo!["content"]
     let extra = userInfo?["ID"] as? NSDictionary
-    let dateFormatter = NSDateFormatter()
+    let dateFormatter = DateFormatter()
     dateFormatter.dateFormat = "yyyy-MM-dd hh:mm:ss"
 
-    let currentContent = "收到自定义消息: \(NSDateFormatter.localizedStringFromDate(NSDate(), dateStyle: NSDateFormatterStyle.NoStyle, timeStyle: NSDateFormatterStyle.MediumStyle)) tittle: \(title) content: \(content) extra: \(self.logDic(extra!))"
-    messageContents.insertObject(currentContent, atIndex: 0)
+    let currentContent = "收到自定义消息: \(DateFormatter.localizedString(from: Date(), dateStyle: DateFormatter.Style.none, timeStyle: DateFormatter.Style.medium)) tittle: \(title) content: \(content) extra: \(self.logDic(extra!))"
+    messageContents.insert(currentContent, at: 0)
     
-    let allContent = "收到消息: \(NSDateFormatter.localizedStringFromDate(NSDate(), dateStyle: NSDateFormatterStyle.NoStyle, timeStyle: NSDateFormatterStyle.MediumStyle)) extra \(self.logDic(extra!))"
+    let allContent = "收到消息: \(DateFormatter.localizedString(from: Date(), dateStyle: DateFormatter.Style.none, timeStyle: DateFormatter.Style.medium)) extra \(self.logDic(extra!))"
     messageContentView.text = allContent
-    messageCount++
+    messageCount += 1
     self.reloadMessageCountLabel()
   }
   
-  func serviceError(notification:NSNotification) {
-    let userInfo = notification.userInfo as? Dictionary<String,String>
+  func serviceError(_ notification:Notification) {
+    let userInfo = (notification as NSNotification).userInfo as? Dictionary<String,String>
     let error = userInfo!["error"]
     print(error)
   }
 
-  func didRegisterRemoteNotification(notification:NSNotification) {
-    var deviceTokenStr = notification.object
+  func didRegisterRemoteNotification(_ notification:Notification) {
+    let deviceTokenStr = notification.object
     deviceTokenValue.text = "\(deviceTokenStr)"
   }
   
@@ -142,12 +142,12 @@ class RootViewController: UIViewController {
   }
   
   func addNotificationCount() {
-    notificationCount++
+    notificationCount += 1
     self.reloadNotificationCountLabel()
   }
   
   func addMessageCount() {
-    messageCount++
+    messageCount += 1
     self.reloadMessageCountLabel()
   }
   func reloadMessageContentView() {

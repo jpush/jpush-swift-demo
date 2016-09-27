@@ -7,95 +7,115 @@
 //
 
 import UIKit
-let appKey = "4f7aef34fb361292c566a1cd"
+import UserNotifications
+
+let appKey = "a1703c14b186a68a66ef86c1"
 let channel = "Publish channel"
 let isProduction = false
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate {
 
   var window: UIWindow?
   
   
-  func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+  func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     
-    if #available(iOS 8, *) {
+    if #available(iOS 10, *) {
+      let entity = JPUSHRegisterEntity()
+      entity.types = NSInteger(UNAuthorizationOptions.alert.rawValue) |
+        NSInteger(UNAuthorizationOptions.sound.rawValue) |
+        NSInteger(UNAuthorizationOptions.badge.rawValue)
+      JPUSHService.register(forRemoteNotificationConfig: entity, delegate: self)
+      
+    } else if #available(iOS 8, *) {
       // 可以自定义 categories
-      JPUSHService.registerForRemoteNotificationTypes(
-        UIUserNotificationType.Badge.rawValue |
-          UIUserNotificationType.Sound.rawValue |
-          UIUserNotificationType.Alert.rawValue,
+      JPUSHService.register(
+        forRemoteNotificationTypes: UIUserNotificationType.badge.rawValue |
+          UIUserNotificationType.sound.rawValue |
+          UIUserNotificationType.alert.rawValue,
         categories: nil)
     } else {
       // ios 8 以前 categories 必须为nil
-      JPUSHService.registerForRemoteNotificationTypes(
-        UIRemoteNotificationType.Badge.rawValue |
-          UIRemoteNotificationType.Sound.rawValue |
-          UIRemoteNotificationType.Alert.rawValue,
+      JPUSHService.register(
+        forRemoteNotificationTypes: UIRemoteNotificationType.badge.rawValue |
+          UIRemoteNotificationType.sound.rawValue |
+          UIRemoteNotificationType.alert.rawValue,
         categories: nil)
     }
     
-    JPUSHService.setupWithOption(launchOptions, appKey: appKey, channel: channel, apsForProduction: isProduction)
+    JPUSHService.setup(withOption: launchOptions, appKey: appKey, channel: channel, apsForProduction: isProduction)
     
     return true
   }
+
   
-  func applicationWillResignActive(application: UIApplication) {
+  @available(iOS 10.0, *)
+  func jpushNotificationCenter(_ center: UNUserNotificationCenter!, didReceive response: UNNotificationResponse!, withCompletionHandler completionHandler: (() -> Void)!) {
     
   }
   
-  func applicationDidEnterBackground(application: UIApplication) {
+  @available(iOS 10.0, *)
+  func jpushNotificationCenter(_ center: UNUserNotificationCenter!, willPresent notification: UNNotification!, withCompletionHandler completionHandler: ((Int) -> Void)!) {
     
   }
   
-  func applicationWillEnterForeground(application: UIApplication) {
+  func applicationWillResignActive(_ application: UIApplication) {
+    
+  }
+  
+  func applicationDidEnterBackground(_ application: UIApplication) {
+    
+  }
+  
+  func applicationWillEnterForeground(_ application: UIApplication) {
     application.applicationIconBadgeNumber = 0
     application.cancelAllLocalNotifications()
   }
   
-  func applicationDidBecomeActive(application: UIApplication) {
+  func applicationDidBecomeActive(_ application: UIApplication) {
     
   }
   
-  func applicationWillTerminate(application: UIApplication) {
+  func applicationWillTerminate(_ application: UIApplication) {
     
   }
   
-  func application(application: UIApplication,
-    didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
+  func application(_ application: UIApplication,
+    didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
       print("get the deviceToken  \(deviceToken)")
-      NSNotificationCenter.defaultCenter().postNotificationName("DidRegisterRemoteNotification", object: deviceToken)
+      NotificationCenter.default.post(name: Notification.Name(rawValue: "DidRegisterRemoteNotification"), object: deviceToken)
       JPUSHService.registerDeviceToken(deviceToken)
       
   }
   
-  func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
+  func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
     print("did fail to register for remote notification with error ", error)
     
   }
   
-  func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
+  func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any]) {
     JPUSHService.handleRemoteNotification(userInfo)
     print("受到通知", userInfo)
-    NSNotificationCenter.defaultCenter().postNotificationName("AddNotificationCount", object: nil)  //把  要addnotificationcount
+    NotificationCenter.default.post(name: Notification.Name(rawValue: "AddNotificationCount"), object: nil)  //把  要addnotificationcount
   }
   
-  func application(application: UIApplication, didReceiveLocalNotification notification: UILocalNotification) {
-    JPUSHService.showLocalNotificationAtFront(notification, identifierKey: nil)
+  func application(_ application: UIApplication, didReceive notification: UILocalNotification) {
+    JPUSHService.showLocalNotification(atFront: notification, identifierKey: nil)
   }
   
   @available(iOS 7, *)
-  func application(application: UIApplication, didRegisterUserNotificationSettings notificationSettings: UIUserNotificationSettings) {
+  func application(_ application: UIApplication, didRegister notificationSettings: UIUserNotificationSettings) {
     
   }
   
   @available(iOS 7, *)
-  func application(application: UIApplication, handleActionWithIdentifier identifier: String?, forLocalNotification notification: UILocalNotification, completionHandler: () -> Void) {
+  func application(_ application: UIApplication, handleActionWithIdentifier identifier: String?, for notification: UILocalNotification, completionHandler: @escaping () -> Void) {
     
   }
   
   @available(iOS 7, *)
-  func application(application: UIApplication, handleActionWithIdentifier identifier: String?, forRemoteNotification userInfo: [NSObject : AnyObject], withResponseInfo responseInfo: [NSObject : AnyObject], completionHandler: () -> Void) {
+  func application(_ application: UIApplication, handleActionWithIdentifier identifier: String?, forRemoteNotification userInfo: [AnyHashable: Any], withResponseInfo responseInfo: [AnyHashable: Any], completionHandler: @escaping () -> Void) {
     
   }
 

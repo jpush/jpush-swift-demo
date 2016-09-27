@@ -20,13 +20,13 @@ class setLocalNotificationViewController: UIViewController,UITextFieldDelegate,U
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
-    let gesture = UITapGestureRecognizer(target: self, action:Selector("handleTap:"))
+    let gesture = UITapGestureRecognizer(target: self, action:#selector(setLocalNotificationViewController.handleTap(_:)))
     gesture.delegate = self
     self.view.addGestureRecognizer(gesture)
   }
   
-  func handleTap(recognizer: UITapGestureRecognizer) {
-    UIApplication.sharedApplication().sendAction(Selector("resignFirstResponder"), to: nil, from: nil, forEvent: nil)
+  func handleTap(_ recognizer: UITapGestureRecognizer) {
+    UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
   }
   
   override func didReceiveMemoryWarning() {
@@ -34,7 +34,7 @@ class setLocalNotificationViewController: UIViewController,UITextFieldDelegate,U
 
   }
   
-  @IBAction func setNotification(sender: AnyObject) {
+  @IBAction func setNotification(_ sender: AnyObject) {
     localnotif = JPUSHService.setLocalNotification(notificationDatePicker.date, alertBody: notificationBodyTextField.text, badge: Int32(notificationBadgeTextField.text!)!, alertAction: notificationButtonTextField.text, identifierKey: notificationIdentifierTextField.text, userInfo: nil, soundName: nil)
     var result:String?
     if localnotif != nil {
@@ -51,19 +51,19 @@ class setLocalNotificationViewController: UIViewController,UITextFieldDelegate,U
     notificationBodyTextField.text = ""
     notificationButtonTextField.text = ""
     notificationIdentifierTextField.text = ""
-    notificationDatePicker.date = NSDate().dateByAddingTimeInterval(0)
+    notificationDatePicker.date = Date().addingTimeInterval(0)
   
   }
-  @IBAction func clearAllNotification(sender: AnyObject) {
+  @IBAction func clearAllNotification(_ sender: AnyObject) {
     JPUSHService.clearAllLocalNotifications()
     let alert = UIAlertView(title: "设置", message: "取消所有本地通知成功", delegate: self, cancelButtonTitle: "确定")
     alert.show()
   }
 
-  @IBAction func clearLastNotification(sender: AnyObject) {
+  @IBAction func clearLastNotification(_ sender: AnyObject) {
     var alertMessage:String?
     if localnotif != nil {
-      JPUSHService.deleteLocalNotification(localnotif)
+      JPUSHService.delete(localnotif)
       localnotif = nil
       alertMessage = "取消上一个通知成功"
     } else {
@@ -74,18 +74,18 @@ class setLocalNotificationViewController: UIViewController,UITextFieldDelegate,U
     alert.show()
   }
   
-  func textFieldDidBeginEditing(textField: UITextField) {
+  func textFieldDidBeginEditing(_ textField: UITextField) {
     
   }
   
-  func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+  func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
     if textField.tag != 10 {
       return true
     }
     return true
   }
   
-  func textFieldShouldReturn(textField: UITextField) -> Bool {
+  func textFieldShouldReturn(_ textField: UITextField) -> Bool {
     textField.resignFirstResponder()
     return true
   }
