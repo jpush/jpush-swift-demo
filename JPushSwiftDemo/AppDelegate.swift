@@ -7,19 +7,28 @@
 //
 
 import UIKit
+import UserNotifications
+
 let appKey = "4f7aef34fb361292c566a1cd"
 let channel = "Publish channel"
 let isProduction = false
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate {
 
   var window: UIWindow?
   
   
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
     
-    if #available(iOS 8, *) {
+    if #available(iOS 10, *) {
+      let entity = JPUSHRegisterEntity()
+      entity.types = NSInteger(UNAuthorizationOptions.Alert.rawValue) |
+        NSInteger(UNAuthorizationOptions.Sound.rawValue) |
+        NSInteger(UNAuthorizationOptions.Badge.rawValue)
+      JPUSHService.registerForRemoteNotificationConfig(entity, delegate: self)
+      
+    } else if #available(iOS 8, *) {
       // 可以自定义 categories
       JPUSHService.registerForRemoteNotificationTypes(
         UIUserNotificationType.Badge.rawValue |
@@ -38,6 +47,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     JPUSHService.setupWithOption(launchOptions, appKey: appKey, channel: channel, apsForProduction: isProduction)
     
     return true
+  }
+  
+  @available(iOS 10.0, *)
+  func jpushNotificationCenter(center: UNUserNotificationCenter!, willPresentNotification notification: UNNotification!, withCompletionHandler completionHandler: ((Int) -> Void)!) {
+    
+  }
+  
+  @available(iOS 10.0, *)
+  func jpushNotificationCenter(center: UNUserNotificationCenter!, didReceiveNotificationResponse response: UNNotificationResponse!, withCompletionHandler completionHandler: (() -> Void)!) {
+    
   }
   
   func applicationWillResignActive(application: UIApplication) {
