@@ -20,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate {
   
   
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+//    let entity = JPUSHRegisterEntity()
     
     if #available(iOS 10, *) {
       let entity = JPUSHRegisterEntity()
@@ -48,16 +49,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate {
     
     return true
   }
-
   
   @available(iOS 10.0, *)
   func jpushNotificationCenter(_ center: UNUserNotificationCenter!, didReceive response: UNNotificationResponse!, withCompletionHandler completionHandler: (() -> Void)!) {
-    
+
+//    let userInfo = response.notification.request.content.userInfo
+//    let request = response.notification.request // 收到推送的请求
+//    let content = request.content // 收到推送的消息内容
+//    
+//    let badge = content.badge // 推送消息的角标
+//    let body = content.body   // 推送消息体
+//    let sound = content.sound // 推送消息的声音
+//    let subtitle = content.subtitle // 推送消息的副标题
+//    let title = content.title // 推送消息的标题
+
   }
   
   @available(iOS 10.0, *)
-  func jpushNotificationCenter(_ center: UNUserNotificationCenter!, willPresent notification: UNNotification!, withCompletionHandler completionHandler: ((Int) -> Void)!) {
-    
+  func jpushNotificationCenter(_ center: UNUserNotificationCenter!, willPresent notification: UNNotification!,
+                               withCompletionHandler completionHandler: ((Int) -> Void)!) {
+//    let userInfo = notification.request.content.userInfo
+//    
+//    let request = notification.request // 收到推送的请求
+//    let content = request.content // 收到推送的消息内容
+//    
+//    let badge = content.badge // 推送消息的角标
+//    let body = content.body   // 推送消息体
+//    let sound = content.sound // 推送消息的声音
+//    let subtitle = content.subtitle // 推送消息的副标题
+//    let title = content.title // 推送消息的标题
   }
   
   func applicationWillResignActive(_ application: UIApplication) {
@@ -118,6 +138,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate {
   func application(_ application: UIApplication, handleActionWithIdentifier identifier: String?, forRemoteNotification userInfo: [AnyHashable: Any], withResponseInfo responseInfo: [AnyHashable: Any], completionHandler: @escaping () -> Void) {
     
   }
+  
 
+  
 }
 
