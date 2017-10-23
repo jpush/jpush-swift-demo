@@ -58,16 +58,16 @@ class RootViewController: UIViewController {
     defaultCenter.removeObserver(self)
   }
 
-  func networkDidSetup(_ notification:Notification) {
+  @objc func networkDidSetup(_ notification:Notification) {
     netWorkStateLabel.text = "已连接"
     print("已连接")
   }
   
-  func networkDidClose(_ notification:Notification) {
+  @objc func networkDidClose(_ notification:Notification) {
     netWorkStateLabel.text = "未连接"
     print("连接已断开")
   }
-  func networkDidRegister(_ notification:Notification) {
+  @objc func networkDidRegister(_ notification:Notification) {
     netWorkStateLabel.text = "已注册"
     if let info = (notification as NSNotification).userInfo as? Dictionary<String,String> {
       // Check if value present before using it
@@ -82,7 +82,7 @@ class RootViewController: UIViewController {
     print("已注册")
   }
   
-  func networkDidLogin(_ notification:Notification) {
+  @objc func networkDidLogin(_ notification:Notification) {
     netWorkStateLabel.text = "已登录"
     print("已登录")
     if JPUSHService.registrationID() != nil {
@@ -105,7 +105,7 @@ class RootViewController: UIViewController {
     
   }
   
-  func networkDidReceiveMessage(_ notification:Notification) {
+  @objc func networkDidReceiveMessage(_ notification:Notification) {
     var userInfo = (notification as NSNotification).userInfo as? Dictionary<String,String>
     let title = userInfo!["title"]
     let content = userInfo!["content"]
@@ -122,13 +122,13 @@ class RootViewController: UIViewController {
     self.reloadMessageCountLabel()
   }
   
-  func serviceError(_ notification:Notification) {
+  @objc func serviceError(_ notification:Notification) {
     let userInfo = (notification as NSNotification).userInfo as? Dictionary<String,String>
     let error = userInfo!["error"]
     print(error)
   }
 
-  func didRegisterRemoteNotification(_ notification:Notification) {
+  @objc func didRegisterRemoteNotification(_ notification:Notification) {
     let deviceTokenStr = notification.object
     deviceTokenValue.text = "\(deviceTokenStr)"
   }

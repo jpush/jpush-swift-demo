@@ -25,7 +25,7 @@ class setLocalNotificationViewController: UIViewController,UITextFieldDelegate,U
     self.view.addGestureRecognizer(gesture)
   }
   
-  func handleTap(_ recognizer: UITapGestureRecognizer) {
+  @objc func handleTap(_ recognizer: UITapGestureRecognizer) {
     UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
   }
   
