@@ -106,17 +106,17 @@ class RootViewController: UIViewController {
   }
   
   @objc func networkDidReceiveMessage(_ notification:Notification) {
-    var userInfo = (notification as NSNotification).userInfo as? Dictionary<String,String>
-    let title = userInfo!["title"]
-    let content = userInfo!["content"]
-    let extra = userInfo?["ID"] as? NSDictionary
-    let dateFormatter = DateFormatter()
-    dateFormatter.dateFormat = "yyyy-MM-dd hh:mm:ss"
+    var userInfo = notification.userInfo// as? Dictionary<String,String>
 
-    let currentContent = "收到自定义消息: \(DateFormatter.localizedString(from: Date(), dateStyle: DateFormatter.Style.none, timeStyle: DateFormatter.Style.medium)) tittle: \(title) content: \(content) extra: \(self.logDic(extra!))"
-    messageContents.insert(currentContent, at: 0)
+    guard let _ = userInfo else {
+        print("\(notification)")
+        return
+    }
     
-    let allContent = "收到消息: \(DateFormatter.localizedString(from: Date(), dateStyle: DateFormatter.Style.none, timeStyle: DateFormatter.Style.medium)) extra \(self.logDic(extra!))"
+    let currentContent = "收到自定义消息: \(userInfo!)"
+    messageContents.insert(currentContent, at: 0)
+
+    let allContent = "收到自定义消息: \(userInfo!)"
     messageContentView.text = allContent
     messageCount += 1
     self.reloadMessageCountLabel()
