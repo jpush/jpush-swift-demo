@@ -731,6 +731,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = JPushSwiftDemo/JPushSwiftDemo.entitlements;
 				DEVELOPMENT_TEAM = RL64Y54S9V;
+				GCC_OPTIMIZATION_LEVEL = 1;
 				INFOPLIST_FILE = JPushSwiftDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -742,7 +743,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "JPushSwiftDemo/JPushSwiftDemo-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -764,7 +765,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.huminios.jpushTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "JPushSwiftDemo/JPushSwiftDemo-Bridging-Header.h";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};

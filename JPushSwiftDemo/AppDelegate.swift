@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate {
   var window: UIWindow?
   
   
-  func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+  func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 //    let entity = JPUSHRegisterEntity()
     
     if #available(iOS 10, *) {
@@ -47,9 +47,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate {
     
     JPUSHService.setup(withOption: launchOptions, appKey: appKey, channel: channel, apsForProduction: isProduction)
     
+    _ = NotificationCenter.default
     return true
   }
-  
+    
   @available(iOS 10.0, *)
   func jpushNotificationCenter(_ center: UNUserNotificationCenter!, didReceive response: UNNotificationResponse!, withCompletionHandler completionHandler: (() -> Void)!) {
 
@@ -105,8 +106,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate {
     didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
       print("get the deviceToken  \(deviceToken)")
       NotificationCenter.default.post(name: Notification.Name(rawValue: "DidRegisterRemoteNotification"), object: deviceToken)
-      JPUSHService.registerDeviceToken(deviceToken)
-      
+    JPUSHService.registerDeviceToken(deviceToken)
   }
   
   func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
