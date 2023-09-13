@@ -9,132 +9,154 @@
 import UIKit
 
 class SetTagsViewController: UIViewController,UIGestureRecognizerDelegate {
-  @IBOutlet weak var tags1TextField: UITextField!
-  @IBOutlet weak var tags2TextField: UITextField!
-  @IBOutlet weak var aliasTextField: UITextField!
-
-  @IBOutlet weak var callBackTextView: UITextView!
-  let callBackSEL = Selector("tagsAliasCallBack:tags:alias:") //
-  
-  @IBAction func textFieldDidEndOnExit(_ sender: AnyObject) {
-    sender.resignFirstResponder()
-  }
-  
-  @IBAction func resetTags(_ sender: AnyObject) {
-    JPUSHService.setTags(NSSet() as Set<NSObject>, callbackSelector: callBackSEL, object: self)
-    let alert = UIAlertView(title: "设置", message: "已发送重置tags请求", delegate: self, cancelButtonTitle: "确定")
-    alert.show()
-  }
-
-  @IBAction func resetAlias(_ sender: AnyObject) {
-    JPUSHService.setAlias("", callbackSelector: callBackSEL, object: self)
-    let alert = UIAlertView(title: "设置", message: "已发送重置 Alias 请求", delegate: self, cancelButtonTitle: "确定")
-    alert.show()
-  }
-  
-  @IBAction func setTagsAlias(_ sender: AnyObject) {
-
-    let tags = NSMutableSet()
+    @IBOutlet weak var tagsTextField: UITextField!
+    @IBOutlet weak var aliasTextField: UITextField!
+    @IBOutlet weak var holderTextView: UITextView!
     
-    if tags1TextField.text != "" {
-      tags.add(tags1TextField.text!)
+    var seq = 0;
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        holderTextView.layer.borderColor = UIColor.lightGray.cgColor
     }
     
-    if tags2TextField.text != "" {
-      tags.add(tags2TextField.text!)
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        JPUSHService.pageEnter(to: NSStringFromClass(type(of: self)))
     }
-
-    let alias = aliasTextField.text
     
-    var outAlias:NSString?
-    var outTags:NSSet?
-    (outAlias, outTags) = self.analyseInput(alias as NSString!, tags: tags)
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        JPUSHService.pageEnter(to: NSStringFromClass(type(of: self)))
+    }
     
-    JPUSHService.setTags(outTags as? Set<NSObject>, alias: outAlias as? String, callbackSelector: callBackSEL, target: self)
     
-    let alert = UIAlertView(title: "设置", message: "已发送设置", delegate: self, cancelButtonTitle: "确定")
-    alert.show()
-  }
-  
-  func analyseInput(_ alias:NSString!, tags:NSSet!)->(NSString?,NSSet?) {
-    var outAlias:NSString?
-    var outTags:NSSet?
-
-        if alias.length == 0 {
-          outAlias = nil
-        } else {
-          outAlias = alias
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        tagsTextField.resignFirstResponder()
+        aliasTextField.resignFirstResponder()
+    }
+    
+    
+    @IBAction func addTags(_ sender: Any) {
+        JPUSHService.addTags(self.getTags(), completion: { iResCode, iTags, seq in
+            let tagsArray = Array(iTags ?? [])
+            let tagsString = "\(tagsArray)"
+            self.inputResponseCode(iResCode, content: tagsString, andSeq: seq)
+        }, seq: self.getSeq())
+    }
+    
+    @IBAction func setTags(_ sender: Any) {
+        JPUSHService.setTags(self.getTags(), completion: { iResCode, iTags, seq in
+            let tagsArray = Array(iTags ?? [])
+            let tagsString = "\(tagsArray)"
+            self.inputResponseCode(iResCode, content: tagsString, andSeq: seq)
+        }, seq: self.getSeq())
+    }
+    
+    
+    @IBAction func getAllTags(_ sender: Any) {
+        JPUSHService.getAllTags({ iResCode, iTags, seq in
+            let tagsArray = Array(iTags ?? [])
+            let tagsString = "\(tagsArray)"
+            self.inputResponseCode(iResCode, content: tagsString, andSeq: seq)
+        }, seq: self.getSeq())
+    }
+    
+    @IBAction func deleteTags(_ sender: Any) {
+        JPUSHService.deleteTags(self.getTags(), completion: { iResCode, iTags, seq in
+            let tagsArray = Array(iTags ?? [])
+            let tagsString = "\(tagsArray)"
+            self.inputResponseCode(iResCode, content: tagsString, andSeq: seq)
+        }, seq: self.getSeq())
+    }
+    
+    
+    @IBAction func cleanTags(_ sender: Any) {
+        JPUSHService.cleanTags({ iResCode, iTags, seq in
+            let tagsArray = Array(iTags ?? [])
+            let tagsString = "\(tagsArray)"
+            self.inputResponseCode(iResCode, content: tagsString, andSeq: seq)
+        }, seq: self.getSeq())
+    }
+    
+    @IBAction func vaildTag(_ sender: Any) {
+        if self.getTags().count == 0 {
+            return
         }
+        JPUSHService.validTag(self.getTags().first!, completion: { iResCode, iTags, seq, isBind in
+            let tagsArray = Array(iTags ?? [])
+            let tagsString = "\(tagsArray)"
+            let content = "\(tagsString) isBind:\(isBind)"
+            self.inputResponseCode(iResCode, content: content, andSeq: seq)
+        }, seq: self.getSeq())
+    }
     
-        if tags.count == 0 {
-          outTags = nil
-        } else {
-          outTags = tags
-          var emptyStringCount = 0
-          tags.enumerateObjects({ (tag:Any, stop:UnsafeMutablePointer<ObjCBool>) -> Void in
-            if (tag as AnyObject).isEqual(to: "") {
-              emptyStringCount += 1
-            } else {
-              emptyStringCount = 0
-              stop.pointee = true
-            }
-          } as! (Any, UnsafeMutablePointer<ObjCBool>) -> Void)
-          if emptyStringCount == tags.count {
-            outAlias = nil
-          }
+    @IBAction func setAlias(_ sender: Any) {
+        if self.getAlias()?.count ?? 0 <= 0 {
+            return
         }
-    return (outAlias,outTags)
-  }
-  
-  @objc func tagsAliasCallBack(_ resCode:CInt, tags:NSSet, alias:NSString) {
-    let callbackString = "\(resCode),  tags: \(self.logSet(tags))"
-    if callBackTextView.text == "服务器返回结果" {
-      callBackTextView.text = callbackString
-    } else {
-      callBackTextView.text = "\(callbackString)    \(callBackTextView.text)"
+        JPUSHService.setAlias(self.getAlias()!, completion: { iResCode, iAlias, seq in
+            self.inputResponseCode(iResCode, content: iAlias ?? "", andSeq: seq)
+        }, seq: self.getSeq())
+        
     }
-    print("TagsAlias回调: \(callbackString)")
-  }
-  
-
-  func logSet(_ dic:NSSet)->String? {
-    if dic.count == 0 {
-      return nil
+    
+    
+    @IBAction func deleteAlias(_ sender: Any) {
+        JPUSHService.deleteAlias({ iResCode, iAlias, seq in
+            self.inputResponseCode(iResCode, content: iAlias ?? "", andSeq: seq)
+        }, seq: self.getSeq())
     }
-    let tempStr1 = dic.description.replacingOccurrences(of: "\\u", with: "\\U")
-    let tempStr2 = dic.description.replacingOccurrences(of: "\"", with: "\\\"")
-    let tempStr3 = "\"" + tempStr2 + "\""
-    let tempData:Data = (tempStr3 as NSString).data(using: String.Encoding.utf8.rawValue)!
-    let str = (String)(describing: PropertyListSerialization.propertyListFromData(tempData, mutabilityOption:PropertyListSerialization.MutabilityOptions(), format:nil, errorDescription: nil))
-    return str
-  }
-  
-  @IBAction func clear(_ sender: AnyObject) {
-    tags1TextField.text = ""
-    tags2TextField.text = ""
-    aliasTextField.text = ""
-  }
-  
-  @IBAction func clearResult(_ sender: AnyObject) {
-    callBackTextView.text = ""
-  }
-  
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    let gesture = UITapGestureRecognizer(target: self, action:#selector(SetTagsViewController.handleTap(_:)))
-    gesture.delegate = self
-    self.view.addGestureRecognizer(gesture)
-  }
-  
-  @objc func handleTap(_ recognizer: UITapGestureRecognizer) {
-    UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
-  }
-
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-
-  }
-
-
+    
+    
+    @IBAction func getAlias(_ sender: Any) {
+        JPUSHService.getAlias({ iResCode, iAlias, seq in
+            self.inputResponseCode(iResCode, content: iAlias ?? "", andSeq: seq)
+        }, seq: self.getSeq())
+    }
+    
+    
+    @IBAction func resetTextField(_ sender: Any) {
+        tagsTextField.text = nil
+        aliasTextField.text = nil
+    }
+    
+    @IBAction func resetTextView(_ sender: Any) {
+        holderTextView.text = nil
+    }
+    
+    
+    func getTags() -> Set<String> {
+        let tagsList = self.tagsTextField.text?.components(separatedBy: ",") ?? []
+        
+        if self.tagsTextField.text?.count ?? 0 > 0 && tagsList.isEmpty {
+            JPushUtils.showAlertController(withTitle: "提示", message: "没有输入tags,请使用逗号作为tags分隔符")
+        }
+        
+        var tags = Set<String>()
+        tags.formUnion(tagsList)
+        
+        // 过滤掉无效的tag
+        let newTags = JPUSHService.filterValidTags(tags)
+        return newTags as! Set<String>
+    }
+    
+    func getAlias() -> String? {
+        return self.aliasTextField.text
+    }
+    
+    func inputResponseCode(_ code: Int, content: String, andSeq seq: Int) {
+        self.holderTextView.text.append("\n\n code:\(code) content:\(content) seq:\(seq)")
+    }
+    
+    func getSeq() -> Int {
+        seq += 1
+        return seq
+    }
+    
 }
 

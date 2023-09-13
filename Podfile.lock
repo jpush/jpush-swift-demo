@@ -1,15 +1,21 @@
 PODS:
-  - JCore (1.1.6)
-  - JPush (3.0.7):
-    - JCore (~> 1.1.6)
+  - JCore (4.2.8)
+  - JPush (5.0.1):
+    - JCore (>= 2.0.0)
 
 DEPENDENCIES:
-  - JPush (~> 3.0.7)
+  - JCore (~> 4.2.1)
+  - JPush (~> 5.0.1)
+
+SPEC REPOS:
+  trunk:
+    - JCore
+    - JPush
 
 SPEC CHECKSUMS:
-  JCore: 18fc8725124f26e55625eaf224659b3a999dcf63
-  JPush: 111b79b8a0169ab8fd4c486dac3ed166ed69293e
+  JCore: 914a446853521f3e353c74cea17e214bee9c9ffc
+  JPush: bf8d6011eb80c776aa40a0c4f5c25fd10335af9c
 
-PODFILE CHECKSUM: d3a708f98e6e550fa4238c2fcb4a3a46c478b248
+PODFILE CHECKSUM: c1a7561f16911d61ff5e3ebb02e8831852c3d0a9
 
-COCOAPODS: 1.2.1
+COCOAPODS: 1.11.3
