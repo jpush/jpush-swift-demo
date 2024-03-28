@@ -74,7 +74,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         // 注意调用
         JPUSHService.handleRemoteNotification(userInfo)
-        print("iOS7及以上系统，收到通知:\(userInfo)");
+        print("iOS7及以上系统，收到通知:\(userInfo)")
+        completionHandler(.newData)
     }
     
 }
