@@ -1,5 +1,6 @@
 # Uncomment the next line to define a global platform for your project
-# platform :ios, '9.0'
+
+platform :ios, '11.0'
 
 target 'JPushSwiftDemo' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
@@ -15,6 +16,11 @@ target 'JPushSwiftDemo' do
   target 'JPushSwiftDemoUITests' do
     inherit! :search_paths
     # Pods for testing
+  end
+  
+  target 'DemoNotificationService' do
+    inherit! :search_paths
+    pod 'JPushExtension'
   end
 
 end

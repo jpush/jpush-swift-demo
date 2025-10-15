@@ -3,12 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 77;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		086B202D1DE09581033B71E0 /* Pods_JPushSwiftDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4E4CB974C826928A8D0BE7E /* Pods_JPushSwiftDemoTests.framework */; };
-		0A4B21B527156EBC01B0C0E2 /* Pods_JPushSwiftDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C150FA8CBC40F5169DC520FB /* Pods_JPushSwiftDemo.framework */; };
+		0A0B472BEDD3CD4542E24255 /* Pods_JPushSwiftDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF81C47306F54EA7FA3448A9 /* Pods_JPushSwiftDemo.framework */; };
 		62343EAB1DFFC3C000DF77D0 /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 62343EAA1DFFC3C000DF77D0 /* libresolv.tbd */; };
 		6296C8AB1C92954500FA965C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6296C8AA1C92954500FA965C /* AppDelegate.swift */; };
 		6296C8B21C92954500FA965C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6296C8B11C92954500FA965C /* Assets.xcassets */; };
@@ -41,7 +40,10 @@
 		6296C91F1C929EC600FA965C /* report.png in Resources */ = {isa = PBXBuildFile; fileRef = 6296C9141C929EC600FA965C /* report.png */; };
 		6296C9201C929EC600FA965C /* setTags.png in Resources */ = {isa = PBXBuildFile; fileRef = 6296C9151C929EC600FA965C /* setTags.png */; };
 		62A803262AB0645700A832AA /* JPushUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A803252AB0645700A832AA /* JPushUtils.swift */; };
-		7E75A156E9645F36CF776B00 /* Pods_JPushSwiftDemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A37EBFC7E5761EC56FF24758 /* Pods_JPushSwiftDemoUITests.framework */; };
+		62FEB1EB2E9CE54B00CD399D /* DemoNotificationService.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 62FEB1E42E9CE54B00CD399D /* DemoNotificationService.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		63345C254F957F33E197D94B /* Pods_JPushSwiftDemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9279200B40C5DF645CE762B5 /* Pods_JPushSwiftDemoUITests.framework */; };
+		6CFBBAD01A4D76F0B75B8806 /* Pods_JPushSwiftDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5F236643CF92514E473D6ED /* Pods_JPushSwiftDemoTests.framework */; };
+		C8BDE1352BB9CAAB70298375 /* Pods_DemoNotificationService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D59E73A29973426C5CCFFA05 /* Pods_DemoNotificationService.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,11 +61,31 @@
 			remoteGlobalIDString = 6296C8A61C92954500FA965C;
 			remoteInfo = JPushSwiftDemo;
 		};
+		62FEB1E92E9CE54B00CD399D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6296C89F1C92954500FA965C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 62FEB1E32E9CE54B00CD399D;
+			remoteInfo = DemoNotificationService;
+		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		62FEB1EC2E9CE54B00CD399D /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				62FEB1EB2E9CE54B00CD399D /* DemoNotificationService.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		1F44D3BEBF25BB8693B3916D /* Pods-JPushSwiftDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JPushSwiftDemoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JPushSwiftDemoTests/Pods-JPushSwiftDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
-		35310A002AC1C2BCA305AF4C /* Pods-JPushSwiftDemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JPushSwiftDemoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-JPushSwiftDemoUITests/Pods-JPushSwiftDemoUITests.release.xcconfig"; sourceTree = "<group>"; };
+		0B4C877631491CD3377020EF /* Pods-DemoNotificationService.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoNotificationService.release.xcconfig"; path = "Pods/Target Support Files/Pods-DemoNotificationService/Pods-DemoNotificationService.release.xcconfig"; sourceTree = "<group>"; };
 		62343EAA1DFFC3C000DF77D0 /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
 		6296C8A71C92954500FA965C /* JPushSwiftDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JPushSwiftDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6296C8AA1C92954500FA965C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -104,14 +126,40 @@
 		6296C9151C929EC600FA965C /* setTags.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = setTags.png; sourceTree = "<group>"; };
 		62A0AE5D1D9A11E4004B1B18 /* JPushSwiftDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = JPushSwiftDemo.entitlements; sourceTree = "<group>"; };
 		62A803252AB0645700A832AA /* JPushUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JPushUtils.swift; sourceTree = "<group>"; };
+		62FEB1E42E9CE54B00CD399D /* DemoNotificationService.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = DemoNotificationService.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		885FEA2F2959C837D2FCA1AE /* Pods-JPushSwiftDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JPushSwiftDemoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JPushSwiftDemoTests/Pods-JPushSwiftDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
+		9279200B40C5DF645CE762B5 /* Pods_JPushSwiftDemoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JPushSwiftDemoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FFFF5C81FB931713880C4BA /* Pods-JPushSwiftDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JPushSwiftDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-JPushSwiftDemo/Pods-JPushSwiftDemo.release.xcconfig"; sourceTree = "<group>"; };
-		A37EBFC7E5761EC56FF24758 /* Pods_JPushSwiftDemoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JPushSwiftDemoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BCA4EBC52E0C5E1040E3982B /* Pods-JPushSwiftDemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JPushSwiftDemoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JPushSwiftDemoUITests/Pods-JPushSwiftDemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		C150FA8CBC40F5169DC520FB /* Pods_JPushSwiftDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JPushSwiftDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A5F236643CF92514E473D6ED /* Pods_JPushSwiftDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JPushSwiftDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3E9A85AFEC4FADC9206BB3E /* Pods-DemoNotificationService.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoNotificationService.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DemoNotificationService/Pods-DemoNotificationService.debug.xcconfig"; sourceTree = "<group>"; };
 		CB866AA3D11C66D0ED08E741 /* Pods-JPushSwiftDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JPushSwiftDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JPushSwiftDemo/Pods-JPushSwiftDemo.debug.xcconfig"; sourceTree = "<group>"; };
-		E4E278BF9D4A1F9C2F4C7B66 /* Pods-JPushSwiftDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JPushSwiftDemoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-JPushSwiftDemoTests/Pods-JPushSwiftDemoTests.release.xcconfig"; sourceTree = "<group>"; };
-		E4E4CB974C826928A8D0BE7E /* Pods_JPushSwiftDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JPushSwiftDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D13501D86B38BAAA600829C4 /* Pods-JPushSwiftDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JPushSwiftDemoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-JPushSwiftDemoTests/Pods-JPushSwiftDemoTests.release.xcconfig"; sourceTree = "<group>"; };
+		D59E73A29973426C5CCFFA05 /* Pods_DemoNotificationService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DemoNotificationService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD5ED35176DC07D41F9FCC18 /* Pods-JPushSwiftDemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JPushSwiftDemoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JPushSwiftDemoUITests/Pods-JPushSwiftDemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		EC093C7167FE916EA8C020CD /* Pods-JPushSwiftDemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JPushSwiftDemoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-JPushSwiftDemoUITests/Pods-JPushSwiftDemoUITests.release.xcconfig"; sourceTree = "<group>"; };
+		FF81C47306F54EA7FA3448A9 /* Pods_JPushSwiftDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JPushSwiftDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		62FEB1EF2E9CE54B00CD399D /* Exceptions for "DemoNotificationService" folder in "DemoNotificationService" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 62FEB1E32E9CE54B00CD399D /* DemoNotificationService */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		62FEB1E52E9CE54B00CD399D /* DemoNotificationService */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				62FEB1EF2E9CE54B00CD399D /* Exceptions for "DemoNotificationService" folder in "DemoNotificationService" target */,
+			);
+			path = DemoNotificationService;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		6296C8A41C92954500FA965C /* Frameworks */ = {
@@ -128,7 +176,7 @@
 				6296C8EF1C929B6D00FA965C /* CoreGraphics.framework in Frameworks */,
 				6296C8ED1C929B6800FA965C /* Foundation.framework in Frameworks */,
 				6296C8EB1C929B6200FA965C /* Security.framework in Frameworks */,
-				0A4B21B527156EBC01B0C0E2 /* Pods_JPushSwiftDemo.framework in Frameworks */,
+				0A0B472BEDD3CD4542E24255 /* Pods_JPushSwiftDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,7 +184,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				086B202D1DE09581033B71E0 /* Pods_JPushSwiftDemoTests.framework in Frameworks */,
+				6CFBBAD01A4D76F0B75B8806 /* Pods_JPushSwiftDemoTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,7 +192,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7E75A156E9645F36CF776B00 /* Pods_JPushSwiftDemoUITests.framework in Frameworks */,
+				63345C254F957F33E197D94B /* Pods_JPushSwiftDemoUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		62FEB1E12E9CE54B00CD399D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C8BDE1352BB9CAAB70298375 /* Pods_DemoNotificationService.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,9 +211,10 @@
 			isa = PBXGroup;
 			children = (
 				62343EAA1DFFC3C000DF77D0 /* libresolv.tbd */,
-				C150FA8CBC40F5169DC520FB /* Pods_JPushSwiftDemo.framework */,
-				E4E4CB974C826928A8D0BE7E /* Pods_JPushSwiftDemoTests.framework */,
-				A37EBFC7E5761EC56FF24758 /* Pods_JPushSwiftDemoUITests.framework */,
+				D59E73A29973426C5CCFFA05 /* Pods_DemoNotificationService.framework */,
+				FF81C47306F54EA7FA3448A9 /* Pods_JPushSwiftDemo.framework */,
+				A5F236643CF92514E473D6ED /* Pods_JPushSwiftDemoTests.framework */,
+				9279200B40C5DF645CE762B5 /* Pods_JPushSwiftDemoUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -168,6 +225,7 @@
 				6296C8A91C92954500FA965C /* JPushSwiftDemo */,
 				6296C8BE1C92954500FA965C /* JPushSwiftDemoTests */,
 				6296C8C91C92954500FA965C /* JPushSwiftDemoUITests */,
+				62FEB1E52E9CE54B00CD399D /* DemoNotificationService */,
 				6296C8A81C92954500FA965C /* Products */,
 				62343EA91DFFC3BF00DF77D0 /* Frameworks */,
 				A73D510EE800F481054D5767 /* Pods */,
@@ -180,6 +238,7 @@
 				6296C8A71C92954500FA965C /* JPushSwiftDemo.app */,
 				6296C8BB1C92954500FA965C /* JPushSwiftDemoTests.xctest */,
 				6296C8C61C92954500FA965C /* JPushSwiftDemoUITests.xctest */,
+				62FEB1E42E9CE54B00CD399D /* DemoNotificationService.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -278,10 +337,12 @@
 			children = (
 				CB866AA3D11C66D0ED08E741 /* Pods-JPushSwiftDemo.debug.xcconfig */,
 				9FFFF5C81FB931713880C4BA /* Pods-JPushSwiftDemo.release.xcconfig */,
-				1F44D3BEBF25BB8693B3916D /* Pods-JPushSwiftDemoTests.debug.xcconfig */,
-				E4E278BF9D4A1F9C2F4C7B66 /* Pods-JPushSwiftDemoTests.release.xcconfig */,
-				BCA4EBC52E0C5E1040E3982B /* Pods-JPushSwiftDemoUITests.debug.xcconfig */,
-				35310A002AC1C2BCA305AF4C /* Pods-JPushSwiftDemoUITests.release.xcconfig */,
+				C3E9A85AFEC4FADC9206BB3E /* Pods-DemoNotificationService.debug.xcconfig */,
+				0B4C877631491CD3377020EF /* Pods-DemoNotificationService.release.xcconfig */,
+				885FEA2F2959C837D2FCA1AE /* Pods-JPushSwiftDemoTests.debug.xcconfig */,
+				D13501D86B38BAAA600829C4 /* Pods-JPushSwiftDemoTests.release.xcconfig */,
+				DD5ED35176DC07D41F9FCC18 /* Pods-JPushSwiftDemoUITests.debug.xcconfig */,
+				EC093C7167FE916EA8C020CD /* Pods-JPushSwiftDemoUITests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -297,10 +358,12 @@
 				6296C8A31C92954500FA965C /* Sources */,
 				6296C8A41C92954500FA965C /* Frameworks */,
 				6296C8A51C92954500FA965C /* Resources */,
+				62FEB1EC2E9CE54B00CD399D /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				62FEB1EA2E9CE54B00CD399D /* PBXTargetDependency */,
 			);
 			name = JPushSwiftDemo;
 			productName = JPushSwiftDemo;
@@ -311,7 +374,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6296C8D21C92954500FA965C /* Build configuration list for PBXNativeTarget "JPushSwiftDemoTests" */;
 			buildPhases = (
-				F2F9E8CC2E5740FE034A5EAD /* [CP] Check Pods Manifest.lock */,
+				C79D0A673ED18A6DCC741461 /* [CP] Check Pods Manifest.lock */,
 				6296C8B71C92954500FA965C /* Sources */,
 				6296C8B81C92954500FA965C /* Frameworks */,
 				6296C8B91C92954500FA965C /* Resources */,
@@ -330,7 +393,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6296C8D51C92954500FA965C /* Build configuration list for PBXNativeTarget "JPushSwiftDemoUITests" */;
 			buildPhases = (
-				18F54970299B388CB13F336A /* [CP] Check Pods Manifest.lock */,
+				747AC26D18643AB6F8555587 /* [CP] Check Pods Manifest.lock */,
 				6296C8C21C92954500FA965C /* Sources */,
 				6296C8C31C92954500FA965C /* Frameworks */,
 				6296C8C41C92954500FA965C /* Resources */,
@@ -345,13 +408,34 @@
 			productReference = 6296C8C61C92954500FA965C /* JPushSwiftDemoUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		62FEB1E32E9CE54B00CD399D /* DemoNotificationService */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 62FEB1F02E9CE54B00CD399D /* Build configuration list for PBXNativeTarget "DemoNotificationService" */;
+			buildPhases = (
+				C9DEBBD967E9B804E16C4EFB /* [CP] Check Pods Manifest.lock */,
+				62FEB1E02E9CE54B00CD399D /* Sources */,
+				62FEB1E12E9CE54B00CD399D /* Frameworks */,
+				62FEB1E22E9CE54B00CD399D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				62FEB1E52E9CE54B00CD399D /* DemoNotificationService */,
+			);
+			name = DemoNotificationService;
+			productName = DemoNotificationService;
+			productReference = 62FEB1E42E9CE54B00CD399D /* DemoNotificationService.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		6296C89F1C92954500FA965C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0720;
+				LastSwiftUpdateCheck = 2600;
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = HXHG;
 				TargetAttributes = {
@@ -376,10 +460,13 @@
 						LastSwiftMigration = 0800;
 						TestTargetID = 6296C8A61C92954500FA965C;
 					};
+					62FEB1E32E9CE54B00CD399D = {
+						CreatedOnToolsVersion = 26.0.1;
+						LastSwiftMigration = 2600;
+					};
 				};
 			};
 			buildConfigurationList = 6296C8A21C92954500FA965C /* Build configuration list for PBXProject "JPushSwiftDemo" */;
-			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -388,6 +475,7 @@
 				Base,
 			);
 			mainGroup = 6296C89E1C92954500FA965C;
+			preferredProjectObjectVersion = 77;
 			productRefGroup = 6296C8A81C92954500FA965C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -395,6 +483,7 @@
 				6296C8A61C92954500FA965C /* JPushSwiftDemo */,
 				6296C8BA1C92954500FA965C /* JPushSwiftDemoTests */,
 				6296C8C51C92954500FA965C /* JPushSwiftDemoUITests */,
+				62FEB1E32E9CE54B00CD399D /* DemoNotificationService */,
 			);
 		};
 /* End PBXProject section */
@@ -435,19 +524,30 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		62FEB1E22E9CE54B00CD399D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		18F54970299B388CB13F336A /* [CP] Check Pods Manifest.lock */ = {
+		747AC26D18643AB6F8555587 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			inputFileListPaths = (
 			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-JPushSwiftDemoUITests-checkManifestLockResult.txt",
 			);
@@ -474,18 +574,44 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F2F9E8CC2E5740FE034A5EAD /* [CP] Check Pods Manifest.lock */ = {
+		C79D0A673ED18A6DCC741461 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			inputFileListPaths = (
 			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-JPushSwiftDemoTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C9DEBBD967E9B804E16C4EFB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DemoNotificationService-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -524,6 +650,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		62FEB1E02E9CE54B00CD399D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -536,6 +669,11 @@
 			isa = PBXTargetDependency;
 			target = 6296C8A61C92954500FA965C /* JPushSwiftDemo */;
 			targetProxy = 6296C8C71C92954500FA965C /* PBXContainerItemProxy */;
+		};
+		62FEB1EA2E9CE54B00CD399D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 62FEB1E32E9CE54B00CD399D /* DemoNotificationService */;
+			targetProxy = 62FEB1E92E9CE54B00CD399D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -655,7 +793,10 @@
 				GCC_OPTIMIZATION_LEVEL = 1;
 				INFOPLIST_FILE = JPushSwiftDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/JPushSwiftDemo",
@@ -682,7 +823,10 @@
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = UT282795WK;
 				INFOPLIST_FILE = JPushSwiftDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/JPushSwiftDemo",
@@ -698,11 +842,15 @@
 		};
 		6296C8D31C92954500FA965C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1F44D3BEBF25BB8693B3916D /* Pods-JPushSwiftDemoTests.debug.xcconfig */;
+			baseConfigurationReference = 885FEA2F2959C837D2FCA1AE /* Pods-JPushSwiftDemoTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = JPushSwiftDemoTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = HXHG.JPushSwiftDemoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
@@ -712,11 +860,15 @@
 		};
 		6296C8D41C92954500FA965C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E4E278BF9D4A1F9C2F4C7B66 /* Pods-JPushSwiftDemoTests.release.xcconfig */;
+			baseConfigurationReference = D13501D86B38BAAA600829C4 /* Pods-JPushSwiftDemoTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = JPushSwiftDemoTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = HXHG.JPushSwiftDemoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
@@ -726,10 +878,14 @@
 		};
 		6296C8D61C92954500FA965C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BCA4EBC52E0C5E1040E3982B /* Pods-JPushSwiftDemoUITests.debug.xcconfig */;
+			baseConfigurationReference = DD5ED35176DC07D41F9FCC18 /* Pods-JPushSwiftDemoUITests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = JPushSwiftDemoUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = HXHG.JPushSwiftDemoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
@@ -740,15 +896,137 @@
 		};
 		6296C8D71C92954500FA965C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 35310A002AC1C2BCA305AF4C /* Pods-JPushSwiftDemoUITests.release.xcconfig */;
+			baseConfigurationReference = EC093C7167FE916EA8C020CD /* Pods-JPushSwiftDemoUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = JPushSwiftDemoUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = HXHG.JPushSwiftDemoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = JPushSwiftDemo;
 				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+		62FEB1ED2E9CE54B00CD399D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C3E9A85AFEC4FADC9206BB3E /* Pods-DemoNotificationService.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = UT282795WK;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DemoNotificationService/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = DemoNotificationService;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2025 HXHG. All rights reserved.";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = cn.jiguang.hxhg.extension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = cn.jiguang.hxhg.extension;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "DemoNotificationService/DemoNotificationService-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		62FEB1EE2E9CE54B00CD399D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0B4C877631491CD3377020EF /* Pods-DemoNotificationService.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = UT282795WK;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DemoNotificationService/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = DemoNotificationService;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2025 HXHG. All rights reserved.";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = cn.jiguang.hxhg.extension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = cn.jiguang.hxhg.extension;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "DemoNotificationService/DemoNotificationService-Bridging-Header.h";
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -787,6 +1065,15 @@
 			buildConfigurations = (
 				6296C8D61C92954500FA965C /* Debug */,
 				6296C8D71C92954500FA965C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		62FEB1F02E9CE54B00CD399D /* Build configuration list for PBXNativeTarget "DemoNotificationService" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				62FEB1ED2E9CE54B00CD399D /* Debug */,
+				62FEB1EE2E9CE54B00CD399D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
